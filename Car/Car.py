@@ -1,5 +1,4 @@
 # Klasy i obiekty
-import random
 
 
 class Car:
@@ -8,8 +7,8 @@ class Car:
     weight = 1
     model = ""
     speed = 1
-    __someNumber =1
-
+    # prywatna zmienna na sposob pythona
+    __someNumber = 1
 
     def ride(self):
         ride = 'brr' * self.speed
@@ -37,24 +36,27 @@ class Car:
         return Car.color
 
     # konstruktor
+    # method overloading on model variable
     def __init__(self, color, model=None):
 
- #method overloading
+
         if model is not None:
             self.model = model
         else:
             self.model = "cheapest"
 
         self.color = color
-        # hermetyzacja
 
         print('Car model is ' + self.model)
         print('Car color is ' + color)
 
+
 class Bike():
     color = "green"
+
     def __init__(self, color, model=None):
         pass
+
 
 # # stworzenie obiektu gdy nie ma konstruktora
 # Car1 = Car()
@@ -75,18 +77,17 @@ class Opel(Car):
     engine = 'diesel'
 
 
-
-
 # print(Car.color)
 # print(Tesla.engine)
 # print(Opel.engine)
-
+# example with overloaded constructor method
 Tesla1 = Tesla('red', "x")
 Opel1 = Opel('black', 'astra')
 Tesla2 = Tesla('black')
 print(Tesla1.engine)
 print(Opel1.engine)
 
+# racing time
 Tesla1.ride()
 Opel1.ride()
 
@@ -106,12 +107,3 @@ Bike1 = Bike
 
 print(Bike.color)
 # Bike.setColor("red")
-
-
-
-
-
-
-
-
-
